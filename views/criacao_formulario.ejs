@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <%- include("includes/header") %> 
+<title>Criar Formulário</title>
+  <body>
+    <div class="container">
+      <h1 class="display-4 text-center py-1">Criação de formulário</h1>
+      <div class="jumbotron p-3 shadow-sm">
+        <div id="formulario" class="form">
+          <div class="campos-form">
+            <div class="form-group col-sm-6 justify-content-center" style="margin: 0.1em auto 3em auto;">
+              <label for="nome_form">Nome do Formulário</label>
+              <input
+                type="text"
+                name="nome_form"
+                required
+                id="nome_form"
+                class="form-control mr-3"
+              />
+            </div>    
+          </div> 
+          <div class="d-flex justify-content-center align-items-center">
+              <img src="/src/plus.png" class="plus-icon" alt="novo" width="36" style="cursor: pointer;"srcset="">
+          </div>
+          <div class="d-flex justify-content-end" id="div_submit">
+            <button id="enviar" class="btn btn-primary mx-3">Registrar</button>
+          </div>
+        </div>
+      </div>
+      <ul id="lista" class="list-group pb-5"></ul>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/cria_form.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>
+
+

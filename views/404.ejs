@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="404.css">
+</head>
+<body class="bg-purple">
+        
+    <div class="stars">
+
+        <div class="central-body">
+            <h4 class="image-404" style="font-size:15rem;color: white; margin: 0;">
+                404</h4>
+                <h3 class="image-404" style="color: white; margin: 0px  auto 50px;">
+                    <% if (erro) { %>
+                        <%= erro %>
+                    <% } %>
+                    </h3>
+                    <% if (erro.includes('Token') || erro.includes('Nome De usuario')) { %>
+                        <a href="http://10.0.150.24/sosy" class="btn-go-home"> <b>SOSY</b></a>
+
+                    <% } else { %>
+                        <a href="/registro" class="btn-go-home"> <b>PÁGINA DE REGISTROS</b></a>
+
+                     <% } %> 
+        </div>
+        <div class="objects">
+            <img class="object_rocket" src="src/rocket.svg" width="40px">
+            <div class="earth-moon">
+                <img class="object_earth" src="src/earth.svg" width="100px">
+                <img class="object_moon" src="src/moon.svg" width="80px">
+            </div>
+            <div class="box_astronaut">
+                <img class="object_astronaut" src="src/astronaut.svg" width="140px">
+            </div>
+        </div>
+        <div class="glowing_stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

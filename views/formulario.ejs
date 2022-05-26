@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <title>Registro</title>
+  <%- include("includes/header") %>
+  <style>
+    .jconfirm-content div {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="jumbotron m-5 p-3 shadow-sm">
+        <div class="form-group">
+          <label for="form">Selecione o Formulário</label>
+          <select class="form-control" name="form" id="form">
+            <option></option>
+            <% resposta.forEach(item =>{ %>
+            <option value="<%= item.id %>"><%=item.nome_form %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="btn-group" role="group" aria-label="">
+          <button type="button" id="gera_tabela" class="btn btn-primary">
+            Visualizar Registros
+          </button>
+        </div>
+        <div class="btn-group mx-3" role="group" aria-label="">
+          <button type="button" id="gera_form" class="btn btn-primary">
+            Abrir Formulario
+          </button>
+        </div>
+      </div>
+      <div id="container-formulario" style="display: none">
+        <h1 class="display-4 text-center py-1" id="nome_form">Form</h1>
+        <div class="jumbotron p-3 shadow-sm">
+          <form id="formulario" class="form">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="form-group col">
+                <label for="data">Data</label>
+                <input
+                  type="date"
+                  name="data"
+                  required
+                  id="data"
+                  class="form-control mr-3"
+                />
+              </div>
+            </div>
+            <span id="form_dinamico" class="d-flex flex-wrap"></span>
+            <div class="d-flex justify-content-end" id="div_submit">
+              <button class="btn btn-primary mx-3">Registrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="container-registros" style="display: none">
+        <div class="jumbotron p-4 shadow-sm">
+          <h3 class="text-center">Registros</h3>
+          <div id="tabela"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/home_registro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>
